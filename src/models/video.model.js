@@ -1,40 +1,41 @@
 import mongoose from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 import {User} from "./user.model.js"
+
 const videoSchema = new mongoose.Schema({
-    videoFile:{
+    videoFile :{
         type:String,
         required:[true,"video is deleated"]
     },
-    thumbnail:{
+    thumbnail :{
         type:String
     },
-    owner:{
+    owner :{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true,
     },
-    title:{
+    title :{
         type:String,
         default:"Stringify Video"
     },
-    discription:{
+    discription :{
         type:String,
         default:"Stringify Video"
     },
-    duration:{
+    duration :{
         type:Number,
         required:true
     },
-    views:{
+    views :{
         type:Number,
         default:0
     },
-    isPublished:{
+    isPublished :{
         type:Boolean,
         default:true
     },
-    owner:{
+    owner :{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
     }
